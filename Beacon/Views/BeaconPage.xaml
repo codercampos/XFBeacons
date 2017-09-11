@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Beacon.Views.BeaconPage">
+	<ContentPage.Content>
+        <ListView
+            VerticalOptions="FillAndExpand"
+            SeparatorVisibility="None"
+            ItemsSource="{Binding BeaconsDetected}"
+            HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20">
+                            <StackLayout Orientation="Horizontal">
+                                <Label FontAttributes="Bold" FontSize="Small" Text="Proximity Id: " HorizontalOptions="Start" />
+                                <Label FontSize="Small" Text="{Binding Uuid}" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <Label FontAttributes="Bold" FontSize="Small" Text="Major: " HorizontalOptions="Start" />
+                                    <Label FontSize="Small" Text="{Binding Major}" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <Label FontAttributes="Bold" FontSize="Small" Text="Minor: " HorizontalOptions="Start" />
+                                    <Label FontSize="Small" Text="{Binding Minor}" HorizontalOptions="FillAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+	</ContentPage.Content>
+</ContentPage>
